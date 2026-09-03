@@ -16,3 +16,9 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
 
       - run: python job.py
+
+      - run: echo "Fichier créé par GitHub Actions" > resultat.txt
+      - uses: actions/upload-artifact@v4
+        with:
+            name: resultat
+            path: resultat.txt
