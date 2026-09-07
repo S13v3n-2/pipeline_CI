@@ -1,0 +1,27 @@
+# Environnements virtuels
+.venv/
+venv/
+ENV/
+env/
+
+# Caches Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest & Couverture de code
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Fichiers système & IDE
+.vscode/
+.idea/
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+
+# Fichiers de logs & temporaires
+*.log
+*.tmp
