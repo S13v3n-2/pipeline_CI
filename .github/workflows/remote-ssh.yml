@@ -17,6 +17,9 @@ jobs:
         run: |
           # Installer l'outil sshpass sur le runner Linux
           # sudo apt-get update && sudo apt-get install -y sshpass || true
+          # Créer le dossier ssh et ignorer la vérification de l'hôte (requis pour sshpass en mode automatisé)
+          mkdir -p ~/.ssh
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
           
           # Exécuter SCP avec le mot de passe fourni par sshpass
           # Exemple pour copier un dossier complet option -r (ici le dossier 'dist')
