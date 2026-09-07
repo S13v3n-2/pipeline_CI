@@ -23,4 +23,4 @@ jobs:
           
           # Exécuter SCP avec le mot de passe fourni par sshpass
           # Exemple pour copier un dossier complet option -r (ici le dossier 'dist')
-          sshpass -p "$SSH_PASSWORD" scp -r pipeline_CI/* $SSH_USER@$SSH_HOST:/home/ubuntu/SC
+          sshpass -p "$SSH_PASSWORD" scp src/calcul.py $SSH_USER@$SSH_HOST:/home/ubuntu/SC
