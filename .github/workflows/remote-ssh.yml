@@ -1,0 +1,23 @@
+name: Remote SSH Command
+on: [push]
+jobs:
+  Remote-SSH-Command:
+    name: Construire le projet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      # 2. Installer sshpass et exécuter SCP
+      - name: Transférer les fichiers via SCP
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          # Installer l'outil sshpass sur le runner Linux
+          sudo apt-get update && sudo apt-get install -y sshpass
+          
+          # Exécuter SCP avec le mot de passe fourni par sshpass
+          # Exemple pour copier un dossier complet option -r (ici le dossier 'dist')
+          sshpass -p "$SSH_PASSWORD" scp calcul.py $SSH_USER@$SSH_HOST:/home/ubuntu/SC
