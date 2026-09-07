@@ -16,7 +16,7 @@ jobs:
           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
         run: |
           # Installer l'outil sshpass sur le runner Linux
-          sudo apt-get update && sudo apt-get install -y sshpass
+          sudo apt-get update && sudo apt-get install -y sshpass || true
           
           # Exécuter SCP avec le mot de passe fourni par sshpass
           # Exemple pour copier un dossier complet option -r (ici le dossier 'dist')
