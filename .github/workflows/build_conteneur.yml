@@ -17,6 +17,7 @@ jobs:
         with:
           context: .
           file: ./Exo_2_docker/Dockerfile
+          load: true
           push: false
           tags: calcul:latest
       - run: docker run --rm calcul:latest python3 calcul.py
