@@ -1,5 +1,6 @@
 name: Remote SSH Command
-on: [push]
+on:
+  workflow_dispatch:
 jobs:
   Remote-SSH-Command:
     name: Construire le projet
